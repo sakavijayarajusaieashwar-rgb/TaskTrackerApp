@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 
-const API = 'http://localhost:3000'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 const emptyTask = { taskHeading: '', taskDescription: '' }
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
 	const [filter, setFilter] = useState('all')
 
 	const request = async (path, options = {}) => {
-		const response = await fetch(`${API}${path}`, {
+		const response = await fetch(`${API_BASE_URL}${path}`, {
 			...options,
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${Cookies.get('jwttoken')}`, ...options.headers }
 		})

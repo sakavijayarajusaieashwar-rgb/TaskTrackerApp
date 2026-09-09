@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  color: #18302b;
+  background: #f4f0e8;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #f4f0e8; }
+button, input { font: inherit; }
+a { color: #d45d3f; font-weight: 700; }
+
+#root { min-height: 100vh; }
+.page-shell {
+  width: min(100% - 32px, 980px);
+  margin: 0 auto;
+  padding: 42px 0 70px;
+}
+.topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 52px; padding: 16px 20px; color: #fffaf0; background: #18302b; border-radius: 8px; box-shadow: 0 10px 24px rgba(24, 48, 43, .14); }
+.brand { display: flex; align-items: center; gap: 10px; font: 700 21px 'Space Grotesk', sans-serif; }
+.brand-mark { display: grid; width: 30px; height: 30px; place-items: center; color: #18302b; background: #e8c66d; border-radius: 50%; }
+.logout-button {
+  padding: 9px 15px;
+  color: #18302b;
+  background: #fffaf0;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.page-heading { margin-bottom: 24px; }
+.page-heading h1 { margin: 4px 0; font: 700 clamp(2rem, 5vw, 3.4rem)/1 'Space Grotesk', sans-serif; }
+.page-heading p:last-child { margin-top: 6px; color: #65736d; }
+.eyebrow { margin: 0; color: #d45d3f; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+.summary-card { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: #e9e4d8; border-radius: 8px; box-shadow: 0 6px 16px rgba(24, 48, 43, .06); }
+.summary-card span { color: #53645d; font-size: 14px; font-weight: 700; }
+.summary-card strong { font: 700 30px 'Space Grotesk', sans-serif; }
+.summary-completed { background: #e4f3e8; }
+.summary-pending { background: #fff0e8; }
+.task-form, .auth-card {
+  padding: 26px;
+  background: #fffaf0;
+  border: 1px solid #ded8ca;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(24, 48, 43, .08);
+}
+.task-form { margin-bottom: 24px; }
+.task-form h2 { margin: 0 0 18px; font: 700 23px 'Space Grotesk', sans-serif; }
+.task-form input, .task-form textarea, .auth-card input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 13px 14px;
+  color: #18302b;
+  background: #fff;
+  border: 1px solid #c9c5b9;
+  border-radius: 4px;
+  outline: none;
+  resize: vertical;
+}
+.task-form label, .edit-modal label { display: block; margin: 14px 0; color: #53645d; font-size: 14px; font-weight: 700; }
+.task-form input, .task-form textarea, .edit-modal input, .edit-modal textarea { margin-top: 7px; }
+.task-form input:focus, .task-form textarea:focus, .auth-card input:focus { border-color: #d45d3f; box-shadow: 0 0 0 3px rgba(212, 93, 63, .14); }
+.task-form button, .auth-card button, .task-card button, .edit-modal button {
+  margin: 6px 6px 0 0;
+  padding: 10px 15px;
+  color: #fffaf0;
+  background: #d45d3f;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform .15s ease, filter .15s ease;
+}
+.task-form button:hover, .auth-card button:hover, .task-card button:hover, .edit-modal button:hover, .logout-button:hover { filter: brightness(.94); transform: translateY(-1px); }
+.primary-button { min-width: 145px; }
+button:disabled { cursor: wait; opacity: .55; }
+.tasks-section { margin-top: 30px; }
+.tasks-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 14px; }
+.tasks-toolbar h2 { margin: 0; font: 700 25px 'Space Grotesk', sans-serif; }
+.filters { display: flex; gap: 6px; padding: 4px; background: #e9e4d8; border-radius: 6px; }
+.filter { padding: 7px 11px; color: #53645d; background: transparent; border: 0; border-radius: 4px; cursor: pointer; font-weight: 700; }
+.filter.active { color: #fffaf0; background: #18302b; }
+.task-card {
+  margin: 14px 0;
+  padding: 21px 23px;
+  border-left: 5px solid;
+  border-radius: 4px;
+  box-shadow: 0 8px 22px rgba(24, 48, 43, .07);
+}
+.task-pending { background: #fff0e8; border-left-color: #d45d3f; }
+.task-completed { background: #e4f3e8; border-left-color: #4c917c; }
+.task-title-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.task-card h3 { margin: 0 0 7px; font: 700 22px 'Space Grotesk', sans-serif; }
+.task-card p { margin: 0 0 14px; color: #65736d; }
+.status-badge { padding: 5px 9px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: .5px; white-space: nowrap; }
+.badge-completed { color: #236347; background: #bde2c8; }
+.badge-pending { color: #963f2d; background: #f6c5b3; }
+.task-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.task-card button { margin: 0; }
+.complete-button { color: #fffaf0; background: #4c917c; }
+.edit-button { color: #18302b; background: #dce5dc; }
+.delete-button { color: #fffaf0; background: #ba493c; }
+.empty-state, .state-message { padding: 30px; color: #65736d; background: #e9e4d8; border-radius: 8px; text-align: center; }
+.error-message { padding: 11px 13px; color: #8a2e27; background: #f4d6ca; border-radius: 4px; }
+.modal-backdrop { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 20px; background: rgba(24, 48, 43, .62); }
+.edit-modal { width: min(100%, 520px); padding: 26px; background: #fffaf0; border-radius: 8px; box-shadow: 0 24px 70px rgba(0, 0, 0, .25); }
+.modal-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.modal-header h2 { margin: 0 0 12px; font: 700 24px 'Space Grotesk', sans-serif; }
+.close-button { margin: 0; padding: 2px 9px; color: #18302b; background: transparent; border: 0; cursor: pointer; font-size: 28px; line-height: 1; }
+.edit-modal input, .edit-modal textarea { display: block; width: 100%; padding: 13px 14px; border: 1px solid #c9c5b9; border-radius: 4px; resize: vertical; }
+.edit-modal form button, .edit-modal > button { margin-top: 8px; }
+.auth-page { display: grid; place-items: center; min-height: 100vh; padding: 24px; }
+.auth-card { width: min(100%, 450px); }
+.auth-card h1 { margin: 7px 0 27px; font: 700 clamp(2.2rem, 8vw, 3.7rem)/1 'Space Grotesk', sans-serif; }
+.auth-card label { display: block; margin: 15px 0; color: #53645d; font-size: 14px; font-weight: 700; }
+.auth-card button { width: 100%; margin-top: 8px; }
+.form-note { color: #65736d; text-align: center; }
+
+@media (max-width: 560px) {
+  .page-shell { width: min(100% - 22px, 820px); padding-top: 28px; }
+  .topbar { margin-bottom: 34px; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .tasks-toolbar { align-items: flex-start; flex-direction: column; }
+  .filters { width: 100%; }
+  .filter { flex: 1; }
+  .task-title-row { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .task-form, .auth-card { padding: 20px; }
+  .task-card button { margin-top: 8px; }
+}
